@@ -4,10 +4,38 @@
 # Task 1: Start
 # Begin by setting up a simple user input loop that asks the user to enter the temperature in Fahrenheit.
 
+def tempCheck():
+
+    # using try in case a user tries to input a non integer
+    try:
+        temperature = input("What is temperature in Fahrenheit? ")
+        temperature = int(temperature)
+        print(f"Current Temperature {temperature} F")
+    except ValueError:
+        # code to print in event user input is not digit
+        print("Please enter a numeric value ")
+
+# tempCheck()
+
+
 # Ensure that your program only accepts numerical input and provides a friendly error message if the user enters something that can't be converted to a number.
 
 # Task 2: Temperature Conversion
 # Write a function that converts the Fahrenheit temperature to Celsius. Remember that the formula is (Fahrenheit - 32) * 5/9.
+
+def tempConversion():
+    try:
+        fahrenheit = input("What is the temperature in Fahrenheit? ")
+        fahrenheit = int(fahrenheit)
+        celcius = (fahrenheit - 32) * 5/9
+        celcius = int(celcius)
+        print(f"{fahrenheit} degrees F is {celcius} C")
+    except ZeroDivisionError:
+        print("It is impossible to divide by 0")
+
+tempConversion()
+
+
 
 # Use a try block to catch any potential errors during the conversion process, such as division by zero or overflow errors.
 
