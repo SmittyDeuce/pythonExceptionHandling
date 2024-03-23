@@ -22,6 +22,7 @@ def tempCheck():
 
 # Task 2: Temperature Conversion
 # Write a function that converts the Fahrenheit temperature to Celsius. Remember that the formula is (Fahrenheit - 32) * 5/9.
+# Use a try block to catch any potential errors during the conversion process, such as division by zero or overflow errors.
 
 def tempConversion():
     try:
@@ -30,19 +31,50 @@ def tempConversion():
         celcius = (fahrenheit - 32) * 5/9
         celcius = int(celcius)
         print(f"{fahrenheit} degrees F is {celcius} C")
+
+        # except zerodivisionerror takes into the account 
+        # if 0 will ever be the divisor  
     except ZeroDivisionError:
         print("It is impossible to divide by 0")
+        #  not to confuse with stack overflow which can lead to Overflow error
+        # OverflowError will occur if an input exceeds max val for numeric data 
+    except OverflowError as e:
+        print("Overflow error occurred: ", e)
 
-tempConversion()
+# tempConversion()
 
-
-
-# Use a try block to catch any potential errors during the conversion process, such as division by zero or overflow errors.
 
 # Task 3: User Experience
 # Implement an else block that prints the converted temperature in a user-friendly format.
-
 # Add a finally block that thanks the user for using the weather forecast application, ensuring that this message is displayed regardless of whether an exception was caught or not.
+
+def tempConversion():
+    try:
+        fahrenheit = input("What is the temperature in Fahrenheit? ")
+        fahrenheit = int(fahrenheit)
+        celcius = (fahrenheit - 32) * 5/9
+        celcius = int(celcius)
+
+        # except zerodivisionerror takes into the account 
+        # if 0 will ever be the divisor  
+    except ZeroDivisionError:
+        print("It is impossible to divide by 0")
+        #  not to confuse with stack overflow which can lead to Overflow error
+        # OverflowError will occur if an input exceeds max val for numeric data 
+    except OverflowError as e:
+        print("Overflow error occurred: ", e)
+    
+    except ValueError:
+        print("Please enter an Integer")
+
+    else:
+        print("The Temperature in Celcius is: ", celcius)
+
+    finally:
+        print("Thank you for using the Weather Forcast Application")
+
+tempConversion()
+
 
 # 2. The Recipe Ratio Adjuster
 # Objective: The aim of this assignment is to create a program that adjusts the quantities of a recipe based on the number of servings, handling any type of arithmetic errors or user input exceptions.
