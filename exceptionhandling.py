@@ -15,7 +15,7 @@ def tempCheck():
         # code to print in event user input is not digit
         print("Please enter a numeric value ")
 
-# tempCheck()
+tempCheck()
 
 
 # Ensure that your program only accepts numerical input and provides a friendly error message if the user enters something that can't be converted to a number.
@@ -41,7 +41,7 @@ def tempConversion():
     except OverflowError as e:
         print("Overflow error occurred: ", e)
 
-# tempConversion()
+tempConversion()
 
 
 # Task 3: User Experience
@@ -75,7 +75,7 @@ def tempConversion():
     finally:
         print("Thank you for using the Weather Forcast Application")
 
-# tempConversion()
+tempConversion()
 
 
 # 2. The Recipe Ratio Adjuster
@@ -95,7 +95,7 @@ def start():
     except ValueError:
         print("Response must be a number")
 
-# start()
+start()
 
 
 # Task 2: Quantity Calculation
@@ -120,7 +120,7 @@ def quantity():
         print("Error Overflow in outputs")
 
 
-# quantity()
+quantity()
 
 
 
