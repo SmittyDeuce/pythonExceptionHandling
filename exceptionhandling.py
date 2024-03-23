@@ -151,4 +151,7 @@ def servingSuccess():
     else:
         print(f"for your personal request you will need {adjustedRecipe} serving(s)")
 
+    finally:
+        print("May you enjoy the meal you are to cook")
+
 servingSuccess()
