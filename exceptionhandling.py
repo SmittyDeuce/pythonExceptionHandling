@@ -70,10 +70,12 @@ def tempConversion():
     else:
         print("The Temperature in Celcius is: ", celcius)
 
+
+    # finally statements will always print no matter what
     finally:
         print("Thank you for using the Weather Forcast Application")
 
-tempConversion()
+# tempConversion()
 
 
 # 2. The Recipe Ratio Adjuster
@@ -81,15 +83,72 @@ tempConversion()
 
 # Task 1: Start
 # Ask the user for the number of servings the recipe is originally for and the number of servings they wish to make.
-
 # Ensure that the user inputs are valid numbers and handle any ValueError that arises from improper input.
+
+def start():
+    try:
+        originalServings = input("How many servings does original call for?: " )
+        personalizedServings = input("How many do you want to make?: " )
+        originalServings = int(originalServings)
+        personalizedServings = int(personalizedServings)
+
+    except ValueError:
+        print("Response must be a number")
+
+# start()
+
 
 # Task 2: Quantity Calculation
 # Calculate the adjustment factor by dividing the desired servings by the original servings.
-
 # Use a try block to catch any arithmetic errors that may occur during the calculation.
+
+def quantity():
+    try:
+        originalServings = input("How many servings does original call for?: " )
+        personalizedServings = input("How many do you want to make?: " )
+        originalServings = int(originalServings)
+        personalizedServings = int(personalizedServings)
+        adjustedRecipe = personalizedServings / originalServings
+
+    except ValueError:
+        print("Response must be a number")
+    
+    except ZeroDivisionError:
+        print("We can not divide a number by 0")
+
+    except OverflowError as e:
+        print("Error Overflow in outputs")
+
+
+# quantity()
+
+
+
+
+
 
 # Task 3: Serving Success
 # If the calculation is successful, display the adjusted recipe quantities to the user.
-
 # Use a finally block to print a message encouraging the user to enjoy their cooking, regardless of the outcome of the calculation.
+
+def servingSuccess():
+    try:
+        originalServings = input("How many servings does original call for?: " )
+        personalizedServings = input("How many do you want to make?: " )
+        originalServings = int(originalServings)
+        personalizedServings = int(personalizedServings)
+        adjustedRecipe = personalizedServings / originalServings
+
+    except ValueError:
+        print("Response must be a number")
+    
+    except ZeroDivisionError:
+        print("We can not divide a number by 0")
+
+    except OverflowError as e:
+        print("Error Overflow in outputs")
+
+    else:
+        print(f"for your personal request you will need {adjustedRecipe} serving(s)")
+
+servingSuccess()
